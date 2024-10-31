@@ -90,7 +90,7 @@ const locations = [
   {
     name: "easter egg",
     "button text": ["Left knob", "Right knob", "Go to town square?"],
-    "button functions": [pickTwo, pickEight, goTown],
+    "button functions": [pickLeft, pickRight, goTown],
     text: 'On your way back, you find a hidden door that seems to lead to an underground celler. The door has one knob on the left and another on the right. You tell yourself "I better be careful which knob I choose, it might be a trap! On the other hand, there might be treasure inside." '
   }
 ];
@@ -283,11 +283,11 @@ function easterEgg() {
   update(locations[7]);
 }
 
-function pickTwo() {
+function pickLeft() {
   pick(2);
 }
 
-function pickEight() {
+function pickRight() {
   pick(8);
 }
 
@@ -300,16 +300,16 @@ function pick(guess) {
   while (numbers.length < 10) {
     numbers.push(Math.floor(Math.random() * 11));
   }
-  text.innerText = "You picked " + guess + ". Here are the random numbers:\n";
-  for (let i = 0; i < 10; i++) {
+  text.innerText = "You picked a knob, and pulled on it................................ \n";
+  /**for (let i = 0; i < 10; i++) {
     text.innerText += numbers[i] + "\n";
-  }
+  }*/
   if (numbers.includes(guess)) {
-    text.innerText += "Correct! The door opens, and inside you find 50 gold!";
+    text.innerText += "Good choice! You manage to open the door, and go inside, there you find 50 gold!";
     gold += 50;
     goldText.innerText = gold;
   } else {
-    text.innerText += "Wrong! A loose bolder falls from the entrance onto your foot. You lose 20 health!";
+    text.innerText += "Wrong one! A loose bolder suddenly falls from the entrance, and lands on your foot. You lose 20 health!";
     health -= 20;
     healthText.innerText = health;
     if (health <= 0) {
