@@ -91,7 +91,8 @@ const locations = [
     name: "easter egg",
     "button text": ["Left knob", "Right knob", "Go to town square?"],
     "button functions": [pickLeft, pickRight, goTown],
-    text: 'On your way back, you find a hidden door that seems to lead to an underground celler. The door has one knob on the left and another on the right. You tell yourself "I better be careful which knob I choose, it might be a trap! On the other hand, there might be treasure inside." '
+    text: 'On your way back, you find a hidden door that seems to lead to an underground celler. The door has one knob on the left and another on the right. You tell yourself "I better be careful which knob I choose, it might be a trap! On the other hand, there might be treasure inside." ',
+    background: "img/Doorway.jpg" // Doorway background
   }
 ];
 
@@ -112,6 +113,7 @@ function update(location) {
     button2.onclick = location["button functions"][1];
     button3.onclick = location["button functions"][2];
     text.innerHTML = location.text;
+
 }
 
 /**Background changer function */
@@ -158,9 +160,10 @@ function buyWeapon() {
       text.innerText = "You do not have enough gold to buy a weapon.";
     }
   } else {
-    text.innerText = "You already have the most powerful weapon!";
+    text.innerText = "You already have the most powerful weapon, the Sword of the Spirit!";
     button2.innerText = "Sell weapon for 15 gold";
     button2.onclick = sellWeapon;
+    setBackgroundImage("img/Sword.jpg"); // Set background image to sword
   }
 }
 
