@@ -114,6 +114,12 @@ function update(location) {
     text.innerHTML = location.text;
 }
 
+/**Background changer function */
+function setBackgroundImage(imagePath) {
+  const background = document.getElementById("background");
+  background.src = imagePath;
+}
+
 function goTown() {
     update(locations[0]);
   }
