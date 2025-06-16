@@ -84,6 +84,7 @@ document.body.style.backgroundImage = "url('./assets/sword.jpg')";
 
 Created with ❤️ by Me, but originaly this was a freecodecamp project.
 Inspired by classic RPG games and browser-based adventures.
+
 📜 License
 
 This project is open source and free to use under the MIT License.
